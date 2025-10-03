@@ -1,18 +1,48 @@
 ﻿<UserControl x:Class="ClassDescriber.ClassDescriberToolWindowControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
-             Background="{DynamicResource {x:Static vsshell:VsBrushes.WindowKey}}"
-             Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
-             mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300"
-             Name="MyToolWindow">
-    <Grid>
-        <StackPanel Orientation="Vertical">
-            <TextBlock Margin="10" HorizontalAlignment="Center">ClassDescriberToolWindow</TextBlock>
-            <Button Content="Click me!" Click="button1_Click" Width="120" Height="80" Name="button1"/>
-        </StackPanel>
+             MinWidth="300" MinHeight="220">
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header / toolbar -->
+        <DockPanel Grid.Row="0" LastChildFill="False" Margin="0,0,0,6">
+            <TextBlock Text="Class Describer"
+                 FontWeight="SemiBold"
+                 VerticalAlignment="Center"
+                 Margin="0,0,8,0"/>
+            <Separator Margin="0,0,8,0" />
+            <Button x:Name="BtnRefresh" DockPanel.Dock="Right" Content="Refresh" Padding="10,2" Margin="6,0,0,0" Click="Refresh_Click"/>
+            <Button x:Name="BtnInsertXml" DockPanel.Dock="Right" Content="Insert XML &lt;summary&gt;" Padding="10,2" Margin="6,0,0,0" Click="InsertXml_Click"/>
+            <Button x:Name="BtnCopy" DockPanel.Dock="Right" Content="Copy" Padding="10,2" Margin="6,0,0,0" Click="Copy_Click"/>
+            <CheckBox x:Name="ChkWrap" DockPanel.Dock="Right" Content="Wrap" IsChecked="True" VerticalAlignment="Center" Checked="Wrap_Checked" Unchecked="Wrap_Checked"/>
+            <CheckBox x:Name="ChkMono" DockPanel.Dock="Right" Content="Mono" IsChecked="True" VerticalAlignment="Center" Margin="6,0,0,0" Checked="Mono_Checked" Unchecked="Mono_Checked"/>
+        </DockPanel>
+
+        <!-- Content -->
+        <Border Grid.Row="1" BorderBrush="#ddd" BorderThickness="1" CornerRadius="4">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <TextBox x:Name="SummaryBox"
+                 Margin="6"
+                 IsReadOnly="True"
+                 AcceptsReturn="True"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto"
+                 HorizontalScrollBarVisibility="Auto"
+                 FontFamily="Consolas"
+                 FontSize="12"
+                 BorderThickness="0"
+                 Background="{x:Null}"/>
+            </ScrollViewer>
+        </Border>
+
+        <!-- Footer / status -->
+        <DockPanel Grid.Row="2" Margin="0,6,0,0">
+            <TextBlock x:Name="TxtStatus" Foreground="#666" />
+        </DockPanel>
     </Grid>
 </UserControl>

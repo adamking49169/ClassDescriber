@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:classdescriber\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|c:\\users\\adam\\source\\repos\\classdescriber\\classdescriber\\classdescribertoolwindowcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\classdescriber\\classdescribertoolwindowcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:classdescriber\\classdescribertoolwindowcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -38,8 +38,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -62,8 +66,7 @@
               "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberToolWindowControl.xaml",
               "RelativeToolTip": "ClassDescriber\\ClassDescriberToolWindowControl.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-03T12:27:24.059Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-03T12:27:24.059Z"
             },
             {
               "$type": "Document",
