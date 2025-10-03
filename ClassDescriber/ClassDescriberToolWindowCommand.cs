@@ -97,6 +97,12 @@ namespace ClassDescriber
                 throw new NotSupportedException("Cannot create tool window");
             }
 
+            if (package is ClassDescriberPackage typedPackage)
+            {
+                typedPackage.InitializeToolWindow(window);
+            }
+
+
             IVsWindowFrame windowFrame = (IVsWindowFrame)window.Frame;
             Microsoft.VisualStudio.ErrorHandler.ThrowOnFailure(windowFrame.Show());
         }

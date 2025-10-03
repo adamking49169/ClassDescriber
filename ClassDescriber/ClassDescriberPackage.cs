@@ -27,6 +27,7 @@ namespace ClassDescriber
             await JoinableTaskFactory.SwitchToMainThreadAsync();
 
             var window = await ShowToolWindowAsync(typeof(ClassDescriberToolWindow), 0, true, DisposalToken);
+            InitializeToolWindow(window);
             if (window?.Frame is IVsWindowFrame frame)
             {
                 // Correct signature: int GetFramePos(VSSETFRAMEPOS[] sfp, out Guid relTo, out int x, out int y, out int cx, out int cy)
@@ -52,6 +53,14 @@ namespace ClassDescriber
                         300   // height
                     );
                 }
+            }
+        }
+        internal void InitializeToolWindow(ToolWindowPane window)
+        {
+            ThreadHelper.ThrowIfNotOnUIThread();
+            if (window is ClassDescriberToolWindow typedWindow && typedWindow.Content is ClassDescriberToolWindowControl control)
+            {
+                control.Initialize(this);
             }
         }
     }
