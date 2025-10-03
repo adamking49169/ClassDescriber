@@ -95,7 +95,11 @@ namespace ClassDescriber
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(package.DisposalToken);
 
             var pkg = (ClassDescriberPackage)package;
-            await pkg.ShowToolWindowAsync();
+            var control = await pkg.ShowToolWindowAsync();
+            if (control != null)
+            {
+                await control.RefreshSummaryAsync(pkg.DisposalToken);
+            }
 
 
         }

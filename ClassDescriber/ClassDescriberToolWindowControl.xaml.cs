@@ -144,7 +144,7 @@ namespace ClassDescriber
             return package != null ? package.DisposalToken : CancellationToken.None;
         }
 
-        private async Task RefreshSummaryAsync(CancellationToken cancellationToken)
+        internal async Task RefreshSummaryAsync(CancellationToken cancellationToken)
         {
             if (package == null)
             {
@@ -154,8 +154,8 @@ namespace ClassDescriber
 
             try
             {
-                var summary = await RoslynActions.TryDescribeCaretClassAsync(package, cancellationToken);
-                SetText(summary ?? "No class found under caret.");
+                var summary = await RoslynActions.TryDescribeCurrentDocumentAsync(package, cancellationToken);
+                SetText(summary ?? "No active document to describe.");
             }
             catch (OperationCanceledException)
             {

@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
+using System;
 using System.Runtime.InteropServices;
 using System.Threading;
-using Microsoft.VisualStudio.Shell;
-using Microsoft.VisualStudio.Shell.Interop;
+using System.Threading.Tasks;
 using Task = System.Threading.Tasks.Task;
 
 namespace ClassDescriber
@@ -22,12 +23,12 @@ namespace ClassDescriber
             await ClassDescriberToolWindowCommand.InitializeAsync(this);
         }
 
-        internal async Task ShowToolWindowAsync()
+        internal async Task<ClassDescriberToolWindowControl> ShowToolWindowAsync()
         {
             await JoinableTaskFactory.SwitchToMainThreadAsync();
 
             var window = await ShowToolWindowAsync(typeof(ClassDescriberToolWindow), 0, true, DisposalToken);
-            InitializeToolWindow(window);
+            var control = InitializeToolWindow(window);
             if (window?.Frame is IVsWindowFrame frame)
             {
                 // Correct signature: int GetFramePos(VSSETFRAMEPOS[] sfp, out Guid relTo, out int x, out int y, out int cx, out int cy)
@@ -54,14 +55,17 @@ namespace ClassDescriber
                     );
                 }
             }
+            return control;
         }
-        internal void InitializeToolWindow(ToolWindowPane window)
+        internal ClassDescriberToolWindowControl InitializeToolWindow(ToolWindowPane window)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
             if (window is ClassDescriberToolWindow typedWindow && typedWindow.Content is ClassDescriberToolWindowControl control)
             {
                 control.Initialize(this);
+                return control;
             }
+            return null;
         }
     }
 }
