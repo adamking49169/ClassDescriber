@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<!-- Standard externs -->
+	<Extern href="stdidcmd.h" />
+	<Extern href="vsshlids.h" />
+
+	<Commands package="guidClassDescriberPackage">
+
+		<Groups>
+			<Group guid="guidClassDescriberPackageCmdSet" id="MyMenuGroup" priority="0x0100">
+				<Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+			</Group>
+		</Groups>
+
+		<!-- Buttons (commands) -->
+		<Buttons>
+			<Button guid="guidClassDescriberPackageCmdSet" id="DescribeClassCommandId" priority="0x0100" type="Button">
+				<Parent guid="guidClassDescriberPackageCmdSet" id="MyMenuGroup" />
+				<Icon guid="guidImages" id="bmpPic1" />
+				<Strings>
+					<ButtonText>Describe this class</ButtonText>
+					<CommandName>Describe this class</CommandName>
+				</Strings>
+			</Button>
+		  <Button guid="guidClassDescriberPackageCmdSet" id="cmdidClassDescriberToolWindowCommand" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1" />
+        <Icon guid="guidImages1" id="bmpPic1" />
+        <Strings>
+          <ButtonText>ClassDescriberToolWindow</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+		<Bitmaps>
+			<Bitmap guid="guidImages" href="Resources\DescribeClassCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+		  <Bitmap guid="guidImages1" href="Resources\ClassDescriberToolWindowCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+    </Bitmaps>
+
+	</Commands>
+
+	<!-- Symbols / GUIDs -->
+	<Symbols>
+		<GuidSymbol name="guidClassDescriberPackage" value="{8e973459-d5f5-459a-9f2a-c0651debd531}" />
+
+		<GuidSymbol name="guidClassDescriberPackageCmdSet" value="{4f4d213c-c835-42fa-b015-cc44b9cd9980}">
+			<IDSymbol name="MyMenuGroup" value="0x1020" />
+			<IDSymbol name="DescribeClassCommandId" value="0x0100" />
+		  <IDSymbol value="4129" name="cmdidClassDescriberToolWindowCommand" />
+    </GuidSymbol>
+
+		<GuidSymbol name="guidImages" value="{b2b3937b-51ee-4cce-af7e-f74c0c90bd0a}">
+			<IDSymbol name="bmpPic1" value="1" />
+			<IDSymbol name="bmpPic2" value="2" />
+			<IDSymbol name="bmpPicSearch" value="3" />
+			<IDSymbol name="bmpPicX" value="4" />
+			<IDSymbol name="bmpPicArrows" value="5" />
+			<IDSymbol name="bmpPicStrikethrough" value="6" />
+		</GuidSymbol>
+	
+    <GuidSymbol value="{62a2a522-f12c-437b-8eeb-9566e1d9cc90}" name="guidImages1">
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

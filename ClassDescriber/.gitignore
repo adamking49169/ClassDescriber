@@ -1,0 +1,45 @@
+﻿# Visual Studio
+.vs/
+[Bb]in/
+[Oo]bj/
+Debug/
+Release/
+x64/
+x86/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+*.exe
+*.dll
+*.pdb
+*.cache
+*.ilk
+*.log
+*.tlog
+
+# VSIX / Extensibility
+*.vsix
+*.pkgdef
+*.exp
+*.idb
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+
+# Test
+TestResult*/
+*.trx
+
+# Misc
+*.db
+*.db-shm
+*.db-wal
+*.opendb
+*.DS_Store
+Thumbs.db
