@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.Editor;
 using Microsoft.VisualStudio.LanguageServices;
@@ -24,8 +23,9 @@ namespace ClassDescriber.Services
             if (vsTextView == null) return null;
 
             // Convert to WPF view/buffer
-            var compModel = await ServiceProvider.GetGlobalServiceAsync(typeof(SComponentModel)) as IComponentModel;
-            var adapters = compModel.GetService<IVsEditorAdaptersFactoryService>();
+            var componentModel = await ServiceProvider.GetGlobalServiceAsync(typeof(SComponentModel)) as IComponentModel;
+            if (componentModel == null) return null;
+            var adapters = componentModel.GetService<IVsEditorAdaptersFactoryService>();
             IWpfTextView wpfView = adapters.GetWpfTextView(vsTextView);
             if (wpfView == null) return null;
 
@@ -33,7 +33,7 @@ namespace ClassDescriber.Services
             int caretPos = wpfView.Caret.Position.BufferPosition.Position;
 
             // Map buffer -> Roslyn document
-            var workspace = await ServiceProvider.GetGlobalServiceAsync(typeof(VisualStudioWorkspace)) as VisualStudioWorkspace;
+            var workspace = componentModel.GetService<VisualStudioWorkspace>();
             if (workspace == null) return null;
 
             var filePath = buffer.GetFilePath();

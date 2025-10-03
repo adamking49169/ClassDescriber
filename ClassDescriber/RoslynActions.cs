@@ -4,6 +4,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Editing;
 using Microsoft.CodeAnalysis.Text;
+using Microsoft.VisualStudio.ComponentModelHost;
 using Microsoft.VisualStudio.LanguageServices;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
@@ -343,7 +344,12 @@ namespace ClassDescriber
         {
             await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
 
-            var workspace = await package.GetServiceAsync(typeof(VisualStudioWorkspace)) as VisualStudioWorkspace;
+            VisualStudioWorkspace workspace = null;
+            var componentModel = await package.GetServiceAsync(typeof(SComponentModel)) as IComponentModel;
+            if (componentModel != null)
+            {
+                workspace = componentModel.GetService<VisualStudioWorkspace>();
+            }
             var dte = await package.GetServiceAsync(typeof(SDTE)) as DTE;
             if (workspace == null || dte == null)
             {
