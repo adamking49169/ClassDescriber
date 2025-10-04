@@ -722,7 +722,7 @@ namespace ClassDescriber
                     return null;
                 }
 
-                const int maxSnippetLength = 6000;
+                const int maxSnippetLength = 60000;
                 if (snippet.Length > maxSnippetLength)
                 {
                     snippet = snippet.Substring(0, maxSnippetLength) + "\n// ... truncated";

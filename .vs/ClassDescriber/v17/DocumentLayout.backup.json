@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|c:\\users\\adam\\source\\repos\\classdescriber\\classdescriber\\services\\aiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:classdescriber\\services\\aiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\RoslynActions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:ClassDescriber\\RoslynActions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -37,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|c:\\users\\adam\\source\\repos\\classdescriber\\classdescriber\\classdescriberpackage.vsct||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:classdescriber\\classdescriberpackage.vsct||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|c:\\users\\adam\\source\\repos\\classdescriber\\classdescriber\\services\\aiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:classdescriber\\services\\aiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\Services\\ClassDescriptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -80,12 +80,8 @@
           "SelectedChildIndex": 6,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ClassDescriberPackage.cs",
               "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberPackage.cs",
               "RelativeDocumentMoniker": "ClassDescriber\\ClassDescriberPackage.cs",
@@ -98,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ClassDescriberToolWindow.cs",
               "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberToolWindow.cs",
               "RelativeDocumentMoniker": "ClassDescriber\\ClassDescriberToolWindow.cs",
@@ -111,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ClassDescriberToolWindowCommand.cs",
               "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberToolWindowCommand.cs",
               "RelativeDocumentMoniker": "ClassDescriber\\ClassDescriberToolWindowCommand.cs",
@@ -124,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ClassDescriberToolWindowControl.xaml.cs",
               "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberToolWindowControl.xaml.cs",
               "RelativeDocumentMoniker": "ClassDescriber\\ClassDescriberToolWindowControl.xaml.cs",
@@ -137,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DescribeClassCommand.cs",
               "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\DescribeClassCommand.cs",
               "RelativeDocumentMoniker": "ClassDescriber\\DescribeClassCommand.cs",
@@ -150,20 +146,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "RoslynActions.cs",
               "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\RoslynActions.cs",
               "RelativeDocumentMoniker": "ClassDescriber\\RoslynActions.cs",
               "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\RoslynActions.cs",
               "RelativeToolTip": "ClassDescriber\\RoslynActions.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAABPAAAAAAAAAA==",
+              "ViewState": "AgIAALgCAAAAAAAAAAAqwMcCAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-03T20:43:30.784Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "AiClient.cs",
+              "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\Services\\AiClient.cs",
+              "RelativeDocumentMoniker": "ClassDescriber\\Services\\AiClient.cs",
+              "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\Services\\AiClient.cs",
+              "RelativeToolTip": "ClassDescriber\\Services\\AiClient.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T17:14:48.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "EditorContext.cs",
               "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\Services\\EditorContext.cs",
               "RelativeDocumentMoniker": "ClassDescriber\\Services\\EditorContext.cs",
@@ -176,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ClassDescriberToolWindowControl.xaml",
               "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberToolWindowControl.xaml",
               "RelativeDocumentMoniker": "ClassDescriber\\ClassDescriberToolWindowControl.xaml",
@@ -188,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ClassDescriberPackage.vsct",
               "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberPackage.vsct",
               "RelativeDocumentMoniker": "ClassDescriber\\ClassDescriberPackage.vsct",
@@ -271,19 +284,6 @@
               "ViewState": "AgIAAK4AAAAAAAAAAAAWwLkAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-03T17:25:52.761Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AiClient.cs",
-              "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\Services\\AiClient.cs",
-              "RelativeDocumentMoniker": "ClassDescriber\\Services\\AiClient.cs",
-              "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\Services\\AiClient.cs",
-              "RelativeToolTip": "ClassDescriber\\Services\\AiClient.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAowFkAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T17:14:48.567Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",

@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Text;
+using System.Collections.Generic;
 using Microsoft.CodeAnalysis;
 
 namespace ClassDescriber
@@ -66,8 +67,21 @@ namespace ClassDescriber
 
             if (methods.Any())
             {
-                sb.AppendLine("Methods (" + methods.Count + "): " +
-                    string.Join(", ", methods.Select(Signature)));
+                sb.AppendLine("Methods (" + methods.Count + "):");
+                for (var i = 0; i < methods.Count; i++)
+                {
+                    var method = methods[i];
+                    sb.AppendLine("  • " + Signature(method));
+                    foreach (var detail in DescribeMethodDetails(method))
+                    {
+                        sb.AppendLine("    " + detail);
+                    }
+
+                    if (i < methods.Count - 1)
+                    {
+                        sb.AppendLine();
+                    }
+                }
             }
 
             if (fields.Any())
@@ -114,6 +128,118 @@ namespace ClassDescriber
         {
             var ps = string.Join(", ", m.Parameters.Select(p => Short(p.Type) + " " + p.Name));
             return m.Name + "(" + ps + ") : " + Short(m.ReturnType);
+        }
+
+        private static IEnumerable<string> DescribeMethodDetails(IMethodSymbol method)
+        {
+            var lines = new List<string>();
+
+            lines.Add(method.IsStatic
+                ? $"How to call: This is a static method, so call it on the class itself (for example, ClassName.{method.Name}())."
+                : $"How to call: This is an instance method, so call it on an object you created (for example, myObject.{method.Name}()).");
+
+            if (method.IsAsync)
+            {
+                lines.Add("Behavior: The method is async, which means you usually await it and it won't block other work while it runs.");
+            }
+
+            var returnType = Short(method.ReturnType);
+            if (returnType == "void")
+            {
+                lines.Add("Returns: void (the method does not hand back a value).");
+            }
+            else
+            {
+                lines.Add($"Returns: {returnType} (the method gives you this type when it finishes).");
+            }
+
+            if (method.TypeParameters.Any())
+            {
+                lines.Add("Type parameters:");
+                foreach (var tp in method.TypeParameters)
+                {
+                    lines.Add($"- {tp.Name}: choose the concrete type for this placeholder when you call the method.");
+                }
+            }
+
+            if (method.Parameters.Any())
+            {
+                lines.Add("Parameters:");
+                foreach (var parameter in method.Parameters)
+                {
+                    var typeDisplay = Short(parameter.Type);
+                    var descriptionParts = new List<string>();
+
+                    switch (parameter.RefKind)
+                    {
+                        case RefKind.Ref:
+                            descriptionParts.Add("passed by ref");
+                            break;
+                        case RefKind.Out:
+                            descriptionParts.Add("passed as out");
+                            break;
+                        case RefKind.In:
+                            descriptionParts.Add("passed as in");
+                            break;
+                    }
+
+                    if (parameter.IsParams)
+                    {
+                        descriptionParts.Add("params array");
+                    }
+
+                    if (parameter.HasExplicitDefaultValue)
+                    {
+                        descriptionParts.Add("optional, default = " + FormatDefaultValue(parameter));
+                    }
+                    else if (parameter.IsOptional)
+                    {
+                        descriptionParts.Add("optional");
+                    }
+
+                    var extra = descriptionParts.Any()
+                        ? " (" + string.Join(", ", descriptionParts) + ")"
+                        : string.Empty;
+
+                    lines.Add($"- {parameter.Name} ({typeDisplay}{extra}): provide a value of type {typeDisplay}.");
+                }
+            }
+            else
+            {
+                lines.Add("Parameters: none. The method runs without any extra input.");
+            }
+
+            return lines;
+        }
+
+        private static string FormatDefaultValue(IParameterSymbol parameter)
+        {
+            if (!parameter.HasExplicitDefaultValue)
+            {
+                return string.Empty;
+            }
+
+            if (parameter.ExplicitDefaultValue == null)
+            {
+                return "null";
+            }
+
+            if (parameter.ExplicitDefaultValue is string s)
+            {
+                return $"\"{s}\"";
+            }
+
+            if (parameter.ExplicitDefaultValue is char c)
+            {
+                return $"'{c}'";
+            }
+
+            if (parameter.ExplicitDefaultValue is bool b)
+            {
+                return b ? "true" : "false";
+            }
+
+            return parameter.ExplicitDefaultValue.ToString() ?? string.Empty;
         }
 
         private static string Short(ITypeSymbol t)
