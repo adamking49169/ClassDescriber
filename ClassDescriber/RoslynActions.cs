@@ -74,7 +74,7 @@ namespace ClassDescriber
             var aiSummary = aiSummaryTask.Result;
             if (!string.IsNullOrWhiteSpace(aiSummary))
             {
-                sections.Add("AI insight:\n" + aiSummary.Trim());
+                sections.Add("AI insight:\n" + FormatAiInsight(aiSummary));
             }
 
             return sections.Count == 0 ? null : string.Join("\n\n", sections); 
@@ -230,7 +230,8 @@ namespace ClassDescriber
                 builder.Append('.');
             }
 
-            return builder.ToString().Trim();
+            var summary = builder.ToString().Trim();
+            return string.IsNullOrEmpty(summary) ? summary : $"**{summary}**";
         }
 
 
@@ -797,6 +798,38 @@ namespace ClassDescriber
             }
 
             return roslynLanguage.ToLowerInvariant();
+        }
+        private static string FormatAiInsight(string aiInsight)
+        {
+            if (string.IsNullOrWhiteSpace(aiInsight))
+            {
+                return aiInsight;
+            }
+
+            var normalized = aiInsight.Replace("\r\n", "\n");
+            var lines = normalized.Split('\n');
+            for (var i = 0; i < lines.Length; i++)
+            {
+                var line = lines[i];
+                var trimmedLine = line.TrimStart();
+                var leadingWhitespaceLength = line.Length - trimmedLine.Length;
+                var leadingWhitespace = leadingWhitespaceLength > 0 ? line.Substring(0, leadingWhitespaceLength) : string.Empty;
+
+                if (trimmedLine.StartsWith("###", StringComparison.Ordinal))
+                {
+                    var content = trimmedLine.Substring(3).Trim();
+                    lines[i] = $"{leadingWhitespace}## **{content}**";
+                    continue;
+                }
+
+                if (trimmedLine.StartsWith("- ", StringComparison.Ordinal))
+                {
+                    var content = trimmedLine.Substring(2).Trim();
+                    lines[i] = $"{leadingWhitespace}* {content}";
+                }
+            }
+
+            return string.Join("\n", lines).TrimEnd();
         }
     }
 }
