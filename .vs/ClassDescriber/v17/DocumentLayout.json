@@ -3,36 +3,55 @@
   "WorkspaceRootPath": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\classdescriber\\roslynactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:classdescriber\\roslynactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\adam\\source\\repos\\ClassDescriber\\src\\ClassDescriber.Vsix\\obj\\Debug\\net472\\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\ClassDescriber.Vsix\\obj\\Debug\\net472\\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\classdescriber\\describeclasscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:classdescriber\\describeclasscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\adam\\source\\repos\\ClassDescriber\\.vs\\ProjectEvaluation\\classdescriber.metadata.v9.bin||{25834150-CD7E-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.vs\\ProjectEvaluation\\classdescriber.metadata.v9.bin||{25834150-CD7E-11D0-92DF-00A0C9138C45}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|c:\\users\\adam\\source\\repos\\classdescriber\\classdescriber\\classdescribertoolwindowcontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:classdescriber\\classdescribertoolwindowcontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\classdescriber\\classdescriberpackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:classdescriber\\classdescriberpackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\classdescriber\\services\\editorcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:classdescriber\\services\\editorcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\classdescriber\\services\\classdescriptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:classdescriber\\services\\classdescriptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\classdescriber\\classdescribertoolwindowcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:classdescriber\\classdescribertoolwindowcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\obj\\Debug\\ClassDescriberToolWindowControl.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ClassDescriber\\obj\\Debug\\ClassDescriberToolWindowControl.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\adam\\source\\repos\\ClassDescriber\\src\\ClassDescriber.Vsix\\source.extension.vsixmanifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\ClassDescriber.Vsix\\source.extension.vsixmanifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\adam\\source\\repos\\ClassDescriber\\src\\ClassDescriber.Vsix\\ClassDescriber.Vsix.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\ClassDescriber.Vsix\\ClassDescriber.Vsix.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberToolWindowControl.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:ClassDescriber\\ClassDescriberToolWindowControl.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberPackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:ClassDescriber\\ClassDescriberPackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\Services\\ClassDescriptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:ClassDescriber\\Services\\ClassDescriptor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberToolWindowControl.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:ClassDescriber\\ClassDescriberToolWindowControl.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\DescribeClassCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:ClassDescriber\\DescribeClassCommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\RoslynActions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:ClassDescriber\\RoslynActions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\Services\\EditorContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A7AAB4E-DEBE-4D1B-8BDD-215A36244584}|ClassDescriber\\ClassDescriber.csproj|solutionrelative:ClassDescriber\\Services\\EditorContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,11 +61,112 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".NETFramework,Version=v4.7.2.AssemblyAttributes.cs",
+              "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\src\\ClassDescriber.Vsix\\obj\\Debug\\net472\\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs",
+              "RelativeDocumentMoniker": "src\\ClassDescriber.Vsix\\obj\\Debug\\net472\\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs",
+              "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\src\\ClassDescriber.Vsix\\obj\\Debug\\net472\\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs",
+              "RelativeToolTip": "src\\ClassDescriber.Vsix\\obj\\Debug\\net472\\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T17:03:36.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "classdescriber.metadata.v9.bin",
+              "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\.vs\\ProjectEvaluation\\classdescriber.metadata.v9.bin",
+              "RelativeDocumentMoniker": ".vs\\ProjectEvaluation\\classdescriber.metadata.v9.bin",
+              "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\.vs\\ProjectEvaluation\\classdescriber.metadata.v9.bin",
+              "RelativeToolTip": ".vs\\ProjectEvaluation\\classdescriber.metadata.v9.bin",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-04T17:03:32.078Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "ClassDescriber.Vsix.csproj",
+              "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\src\\ClassDescriber.Vsix\\ClassDescriber.Vsix.csproj",
+              "RelativeDocumentMoniker": "src\\ClassDescriber.Vsix\\ClassDescriber.Vsix.csproj",
+              "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\src\\ClassDescriber.Vsix\\ClassDescriber.Vsix.csproj",
+              "RelativeToolTip": "src\\ClassDescriber.Vsix\\ClassDescriber.Vsix.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-04T00:11:12.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\10.0.100-rc.1.25451.107\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Sdk.DefaultItems.Shared.targets",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAAwMUAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-10-04T00:10:25.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClassDescriberToolWindowControl.g.i.cs",
+              "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\obj\\Debug\\ClassDescriberToolWindowControl.g.i.cs",
+              "RelativeDocumentMoniker": "ClassDescriber\\obj\\Debug\\ClassDescriberToolWindowControl.g.i.cs",
+              "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\obj\\Debug\\ClassDescriberToolWindowControl.g.i.cs",
+              "RelativeToolTip": "ClassDescriber\\obj\\Debug\\ClassDescriberToolWindowControl.g.i.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAWwLkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T17:25:52.761Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "source.extension.vsixmanifest",
+              "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\src\\ClassDescriber.Vsix\\source.extension.vsixmanifest",
+              "RelativeDocumentMoniker": "src\\ClassDescriber.Vsix\\source.extension.vsixmanifest",
+              "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\src\\ClassDescriber.Vsix\\source.extension.vsixmanifest",
+              "RelativeToolTip": "src\\ClassDescriber.Vsix\\source.extension.vsixmanifest",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003464|",
+              "WhenOpened": "2025-10-04T00:11:32.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ClassDescriberToolWindowControl.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberToolWindowControl.xaml.cs",
+              "RelativeDocumentMoniker": "ClassDescriber\\ClassDescriberToolWindowControl.xaml.cs",
+              "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberToolWindowControl.xaml.cs",
+              "RelativeToolTip": "ClassDescriber\\ClassDescriberToolWindowControl.xaml.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAjwB4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T17:25:07.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClassDescriberPackage.cs",
+              "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberPackage.cs",
+              "RelativeDocumentMoniker": "ClassDescriber\\ClassDescriberPackage.cs",
+              "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberPackage.cs",
+              "RelativeToolTip": "ClassDescriber\\ClassDescriberPackage.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowEMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T20:36:31.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ClassDescriptor.cs",
               "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\Services\\ClassDescriptor.cs",
               "RelativeDocumentMoniker": "ClassDescriber\\Services\\ClassDescriptor.cs",
@@ -58,57 +178,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ClassDescriberPackage.cs",
-              "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberPackage.cs",
-              "RelativeDocumentMoniker": "ClassDescriber\\ClassDescriberPackage.cs",
-              "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberPackage.cs",
-              "RelativeToolTip": "ClassDescriber\\ClassDescriberPackage.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAowEMAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T20:36:31.009Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ClassDescriberToolWindowControl.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberToolWindowControl.xaml.cs",
-              "RelativeDocumentMoniker": "ClassDescriber\\ClassDescriberToolWindowControl.xaml.cs",
-              "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberToolWindowControl.xaml.cs",
-              "RelativeToolTip": "ClassDescriber\\ClassDescriberToolWindowControl.xaml.cs",
-              "ViewState": "AgIAAIUAAAAAAAAAAAArwJkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T17:25:07.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ClassDescriberToolWindowControl.g.i.cs",
-              "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\obj\\Debug\\ClassDescriberToolWindowControl.g.i.cs",
-              "RelativeDocumentMoniker": "ClassDescriber\\obj\\Debug\\ClassDescriberToolWindowControl.g.i.cs",
-              "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\obj\\Debug\\ClassDescriberToolWindowControl.g.i.cs",
-              "RelativeToolTip": "ClassDescriber\\obj\\Debug\\ClassDescriberToolWindowControl.g.i.cs",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAWwLkAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T17:25:52.761Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "ClassDescriberToolWindowControl.xaml",
               "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberToolWindowControl.xaml",
               "RelativeDocumentMoniker": "ClassDescriber\\ClassDescriberToolWindowControl.xaml",
               "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\ClassDescriberToolWindowControl.xaml",
               "RelativeToolTip": "ClassDescriber\\ClassDescriberToolWindowControl.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-03T17:25:17.456Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-03T17:25:17.456Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "DescribeClassCommand.cs",
               "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\DescribeClassCommand.cs",
               "RelativeDocumentMoniker": "ClassDescriber\\DescribeClassCommand.cs",
@@ -116,25 +198,23 @@
               "RelativeToolTip": "ClassDescriber\\DescribeClassCommand.cs",
               "ViewState": "AgIAAE4AAAAAAAAAAAAswGUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T17:15:45.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-03T17:15:45.668Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 11,
               "Title": "RoslynActions.cs",
               "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\RoslynActions.cs",
               "RelativeDocumentMoniker": "ClassDescriber\\RoslynActions.cs",
               "ToolTip": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\RoslynActions.cs",
               "RelativeToolTip": "ClassDescriber\\RoslynActions.cs",
-              "ViewState": "AgIAAOkBAAAAAAAAAAAQwPwBAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAMoAAAAAAAAAAAArwNgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T20:43:30.784Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-03T20:43:30.784Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "EditorContext.cs",
               "DocumentMoniker": "C:\\Users\\adam\\source\\repos\\ClassDescriber\\ClassDescriber\\Services\\EditorContext.cs",
               "RelativeDocumentMoniker": "ClassDescriber\\Services\\EditorContext.cs",
