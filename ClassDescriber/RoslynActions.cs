@@ -17,6 +17,7 @@ using System.Security;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Net.Http;
 using Document = Microsoft.CodeAnalysis.Document;
 
 namespace ClassDescriber
@@ -26,6 +27,7 @@ namespace ClassDescriber
     /// </summary>
     internal static class RoslynActions
     {
+        private static readonly HttpClient SharedHttpClient = new HttpClient();
         public static async Task<string> TryDescribeCaretClassAsync(AsyncPackage package, CancellationToken cancellationToken)
         {
             if (package is null)
@@ -54,9 +56,28 @@ namespace ClassDescriber
             {
                 return null;
             }
+            var (document, position) = editorContext.Value;
 
-            var (document, _) = editorContext.Value;
-            return await DescribeDocumentAsync(document, cancellationToken).ConfigureAwait(false);
+            var documentSummaryTask = DescribeDocumentAsync(document, cancellationToken);
+            var aiSummaryTask = TryGenerateAiInsightAsync(document, position, cancellationToken);
+
+            await Task.WhenAll(documentSummaryTask, aiSummaryTask).ConfigureAwait(false);
+
+            var sections = new List<string>();
+
+            var documentSummary = documentSummaryTask.Result;
+            if (!string.IsNullOrWhiteSpace(documentSummary))
+            {
+                sections.Add(documentSummary.Trim());
+            }
+
+            var aiSummary = aiSummaryTask.Result;
+            if (!string.IsNullOrWhiteSpace(aiSummary))
+            {
+                sections.Add("AI insight:\n" + aiSummary.Trim());
+            }
+
+            return sections.Count == 0 ? null : string.Join("\n\n", sections); 
         }
 
         public static async Task<bool> TryInsertXmlSummaryForCaretClassAsync(AsyncPackage package, CancellationToken cancellationToken)
@@ -681,6 +702,101 @@ namespace ClassDescriber
             public ClassDeclarationSyntax ClassDeclaration { get; }
 
             public int CaretPosition { get; }
+        }
+        private static async Task<string> TryGenerateAiInsightAsync(Document document, int caretPosition, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var aiClient = new AiClient(SharedHttpClient);
+                if (!aiClient.IsConfigured)
+                {
+                    return null;
+                }
+
+                var sourceText = await document.GetTextAsync(cancellationToken).ConfigureAwait(false);
+                var root = await document.GetSyntaxRootAsync(cancellationToken).ConfigureAwait(false);
+
+                var snippet = ExtractRelevantSnippet(sourceText, root, caretPosition);
+                if (string.IsNullOrWhiteSpace(snippet))
+                {
+                    return null;
+                }
+
+                const int maxSnippetLength = 6000;
+                if (snippet.Length > maxSnippetLength)
+                {
+                    snippet = snippet.Substring(0, maxSnippetLength) + "\n// ... truncated";
+                }
+
+                var language = NormalizeLanguage(document.Project?.Language);
+                var filePath = !string.IsNullOrWhiteSpace(document.FilePath)
+                    ? Path.GetFileName(document.FilePath)
+                    : document.Name ?? "document";
+
+                return await aiClient.ExplainAsync(snippet, language, filePath, cancellationToken).ConfigureAwait(false);
+            }
+            catch (OperationCanceledException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                return $"AI insight unavailable: {ex.Message}";
+            }
+        }
+
+        private static string ExtractRelevantSnippet(SourceText sourceText, SyntaxNode root, int caretPosition)
+        {
+            if (sourceText == null)
+            {
+                return null;
+            }
+
+            if (root is CSharpSyntaxNode csharpRoot)
+            {
+                var position = caretPosition;
+                if (position < 0)
+                {
+                    position = 0;
+                }
+                else if (position > sourceText.Length)
+                {
+                    position = sourceText.Length;
+                }
+                var token = csharpRoot.FindToken(position);
+                var member = token.Parent?.AncestorsAndSelf().OfType<MemberDeclarationSyntax>().FirstOrDefault();
+                if (member != null)
+                {
+                    return sourceText.ToString(member.Span);
+                }
+            }
+
+            return sourceText.ToString();
+        }
+
+        private static string NormalizeLanguage(string roslynLanguage)
+        {
+            if (string.IsNullOrWhiteSpace(roslynLanguage))
+            {
+                return "csharp";
+            }
+
+            if (string.Equals(roslynLanguage, LanguageNames.CSharp, StringComparison.OrdinalIgnoreCase))
+            {
+                return "csharp";
+            }
+
+            if (string.Equals(roslynLanguage, LanguageNames.VisualBasic, StringComparison.OrdinalIgnoreCase))
+            {
+                return "vb";
+            }
+
+            if (string.Equals(roslynLanguage, LanguageNames.FSharp, StringComparison.OrdinalIgnoreCase))
+            {
+                return "fsharp";
+            }
+
+            return roslynLanguage.ToLowerInvariant();
         }
     }
 }
