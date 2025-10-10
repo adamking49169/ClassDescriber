@@ -180,7 +180,7 @@ namespace ClassDescriber
             }
 
             var seen = new HashSet<INamedTypeSymbol>(SymbolEqualityComparer.Default);
-            var typeSymbols = new List<INamedTypeSymbol>();
+            var typeNames = new List<string>();
             var typeDescriptions = new List<string>();
 
             foreach (var declaration in root.DescendantNodes().OfType<BaseTypeDeclarationSyntax>())
@@ -191,7 +191,11 @@ namespace ClassDescriber
                     continue;
                 }
 
-                typeSymbols.Add(symbol);
+
+                if (!string.IsNullOrEmpty(symbol.Name))
+                {
+                    typeNames.Add(symbol.Name);
+                }
                 var description = DescribeNamedType(symbol, declaration);
                 if (!string.IsNullOrWhiteSpace(description))
                 {
@@ -199,12 +203,12 @@ namespace ClassDescriber
                 }
             }
 
-            if (typeSymbols.Count > 0)
+            if (typeNames.Count > 0)
             {
                 builder.Append("It defines ");
-                builder.Append(CreateCountDescription(typeSymbols.Count, "type"));
+                builder.Append(CreateCountDescription(typeNames.Count, "type"));
                 builder.Append(": ");
-                builder.Append(JoinWithCommas(typeSymbols.Select(s => s.Name).ToList(), "and"));
+                builder.Append(JoinWithCommas(typeNames, "and"));
                 builder.Append(". ");
             }
             else
@@ -335,13 +339,18 @@ namespace ClassDescriber
                 builder.Append('.');
             }
 
+            var members = symbol.GetMembers();
+
             if (symbol.TypeKind == TypeKind.Enum)
             {
-                var enumMembers = symbol.GetMembers()
-                    .OfType<IFieldSymbol>()
-                    .Where(f => !f.IsImplicitlyDeclared)
-                    .Select(f => f.Name)
-                    .ToList();
+                var enumMembers = new List<string>();
+                foreach (var member in members)
+                {
+                    if (member is IFieldSymbol field && !field.IsImplicitlyDeclared)
+                    {
+                        enumMembers.Add(field.Name);
+                    }
+                }
                 if (enumMembers.Count > 0)
                 {
                     builder.Append(' ');
@@ -353,14 +362,50 @@ namespace ClassDescriber
                 return builder.ToString();
             }
 
-            var members = symbol.GetMembers().Where(m => !m.IsImplicitlyDeclared).ToList();
-            var methodCount = members.OfType<IMethodSymbol>().Count(m => m.MethodKind == MethodKind.Ordinary);
-            var propertyCount = members.OfType<IPropertySymbol>().Count();
-            var fieldCount = members.OfType<IFieldSymbol>().Count(f => !f.IsConst);
-            var constantCount = members.OfType<IFieldSymbol>().Count(f => f.IsConst);
-            var eventCount = members.OfType<IEventSymbol>().Count();
+            int methodCount = 0;
+            int propertyCount = 0;
+            int fieldCount = 0;
+            int constantCount = 0;
+            int eventCount = 0;
+            foreach (var member in members)
+            {
+                if (member.IsImplicitlyDeclared)
+                {
+                    continue;
+                }
 
-            var memberDescriptions = new List<string>();
+                if (member is IMethodSymbol method && method.MethodKind == MethodKind.Ordinary)
+                {
+                    methodCount++;
+                    continue;
+                }
+
+                if (member is IPropertySymbol)
+                {
+                    propertyCount++;
+                    continue;
+                }
+
+                if (member is IFieldSymbol field)
+                {
+                    if (field.IsConst)
+                    {
+                        constantCount++;
+                    }
+                    else
+                    {
+                        fieldCount++;
+                    }
+
+                    continue;
+                }
+
+                if (member is IEventSymbol)
+                {
+                    eventCount++;
+                }
+            }
+            var memberDescriptions = new List<string>(capacity: 5);
 
             if (propertyCount > 0)
             {

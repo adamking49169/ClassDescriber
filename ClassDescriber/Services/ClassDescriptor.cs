@@ -1,7 +1,9 @@
-﻿using System.Linq;
-using System.Text;
+﻿using Microsoft.CodeAnalysis;
+using System;
 using System.Collections.Generic;
-using Microsoft.CodeAnalysis;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace ClassDescriber
 {
@@ -11,7 +13,7 @@ namespace ClassDescriber
         {
             var sb = new StringBuilder();
 
-            var ns = type.ContainingNamespace != null ? type.ContainingNamespace.ToDisplayString() : string.Empty;
+            var ns = type.ContainingNamespace?.ToDisplayString() ?? string.Empty;
             sb.AppendLine(type.Name + "  (" + ns + ")");
             sb.AppendLine(new string('─', 42));
 
@@ -49,20 +51,39 @@ namespace ClassDescriber
                 sb.AppendLine("Attributes: [" + string.Join(", ", attrs) + "]");
             }
 
-            // Public API (flat)
-            var props = type.GetMembers().OfType<IPropertySymbol>()
-                .Where(m => m.DeclaredAccessibility == Accessibility.Public).ToList();
-            var methods = type.GetMembers().OfType<IMethodSymbol>()
-                .Where(m => m.MethodKind == MethodKind.Ordinary && m.DeclaredAccessibility == Accessibility.Public).ToList();
-            var fields = type.GetMembers().OfType<IFieldSymbol>()
-                .Where(m => m.DeclaredAccessibility == Accessibility.Public && !m.IsConst).ToList();
-            var consts = type.GetMembers().OfType<IFieldSymbol>()
-                .Where(m => m.IsConst && m.DeclaredAccessibility == Accessibility.Public).ToList();
+            var props = new List<IPropertySymbol>();
+            var methods = new List<IMethodSymbol>();
+            var fields = new List<IFieldSymbol>();
+            var consts = new List<IFieldSymbol>();
 
             if (props.Any())
             {
                 sb.AppendLine("Properties (" + props.Count + "): " +
                     string.Join(", ", props.Select(p => Short(p.Type) + " " + p.Name)));
+            }
+
+            foreach (var member in type.GetMembers())
+            {
+                switch (member)
+                {
+                    case IPropertySymbol property when property.DeclaredAccessibility == Accessibility.Public:
+                        props.Add(property);
+                        break;
+                    case IMethodSymbol method when method.MethodKind == MethodKind.Ordinary && method.DeclaredAccessibility == Accessibility.Public:
+                        methods.Add(method);
+                        break;
+                    case IFieldSymbol field when field.DeclaredAccessibility == Accessibility.Public:
+                        if (field.IsConst)
+                        {
+                            consts.Add(field);
+                        }
+                        else
+                        {
+                            fields.Add(field);
+                        }
+
+                        break;
+                }
             }
 
             if (methods.Any())
@@ -96,17 +117,28 @@ namespace ClassDescriber
                     string.Join(", ", consts.Select(f => Short(f.Type) + " " + f.Name)));
             }
 
-            // Dependencies (types referenced by public API)
-            var deps = methods.SelectMany(m => m.Parameters.Select(p => p.Type))
-                              .Concat(props.Select(p => p.Type))
-                              .Concat(fields.Select(f => f.Type))
-                              .Select(t => t.OriginalDefinition.ToDisplayString(SymbolDisplayFormat.MinimallyQualifiedFormat))
-                              .Distinct()
-                              .OrderBy(n => n)
-                              .ToList();
-            if (deps.Any())
+            var dependencies = new SortedSet<string>(StringComparer.Ordinal);
+
+            foreach (var method in methods)
             {
-                sb.AppendLine("Depends on: " + string.Join(", ", deps));
+                foreach (var parameter in method.Parameters)
+                {
+                    AddDependency(parameter.Type);
+                }
+            }
+
+            foreach (var property in props)
+            {
+                AddDependency(property.Type);
+            }
+
+            foreach (var field in fields)
+            {
+                AddDependency(field.Type);
+            }
+            if (dependencies.Count > 0)
+            {
+                sb.AppendLine("Depends on: " + string.Join(", ", dependencies));
             }
 
             // XML doc presence
@@ -117,6 +149,15 @@ namespace ClassDescriber
             }
 
             return sb.ToString();
+
+            void AddDependency(ITypeSymbol typeSymbol)
+            {
+                var typeName = typeSymbol.OriginalDefinition.ToDisplayString(SymbolDisplayFormat.MinimallyQualifiedFormat);
+                if (!string.IsNullOrWhiteSpace(typeName))
+                {
+                    dependencies.Add(typeName);
+                }
+            }
         }
 
         private static string ToLowerAcc(Accessibility a)
@@ -132,39 +173,34 @@ namespace ClassDescriber
 
         private static IEnumerable<string> DescribeMethodDetails(IMethodSymbol method)
         {
-            var lines = new List<string>();
-
-            lines.Add(method.IsStatic
+            yield return method.IsStatic
                 ? $"How to call: This is a static method, so call it on the class itself (for example, ClassName.{method.Name}())."
-                : $"How to call: This is an instance method, so call it on an object you created (for example, myObject.{method.Name}()).");
+                : $"How to call: This is an instance method, so call it on an object you created (for example, myObject.{method.Name}()).";
 
             if (method.IsAsync)
             {
-                lines.Add("Behavior: The method is async, which means you usually await it and it won't block other work while it runs.");
+                yield return "Behavior: The method is async, which means you usually await it and it won't block other work while it runs.";
             }
 
             var returnType = Short(method.ReturnType);
-            if (returnType == "void")
-            {
-                lines.Add("Returns: void (the method does not hand back a value).");
-            }
-            else
-            {
-                lines.Add($"Returns: {returnType} (the method gives you this type when it finishes).");
-            }
+
+            yield return returnType == "void"
+                ? "Returns: void (the method does not hand back a value)."
+                : $"Returns: {returnType} (the method gives you this type when it finishes).";
+
 
             if (method.TypeParameters.Any())
             {
-                lines.Add("Type parameters:");
+                yield return "Type parameters:";
                 foreach (var tp in method.TypeParameters)
                 {
-                    lines.Add($"- {tp.Name}: choose the concrete type for this placeholder when you call the method.");
+                    yield return $"- {tp.Name}: choose the concrete type for this placeholder when you call the method.";
                 }
             }
 
             if (method.Parameters.Any())
             {
-                lines.Add("Parameters:");
+                yield return "Parameters:";
                 foreach (var parameter in method.Parameters)
                 {
                     var typeDisplay = Short(parameter.Type);
@@ -197,19 +233,18 @@ namespace ClassDescriber
                         descriptionParts.Add("optional");
                     }
 
-                    var extra = descriptionParts.Any()
+                    var extra = descriptionParts.Count > 0
                         ? " (" + string.Join(", ", descriptionParts) + ")"
                         : string.Empty;
 
-                    lines.Add($"- {parameter.Name} ({typeDisplay}{extra}): provide a value of type {typeDisplay}.");
+                    yield return $"- {parameter.Name} ({typeDisplay}{extra}): provide a value of type {typeDisplay}.";
                 }
             }
             else
             {
-                lines.Add("Parameters: none. The method runs without any extra input.");
+                yield return "Parameters: none. The method runs without any extra input.";
             }
 
-            return lines;
         }
 
         private static string FormatDefaultValue(IParameterSymbol parameter)

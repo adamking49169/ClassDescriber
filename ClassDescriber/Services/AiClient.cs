@@ -44,9 +44,14 @@ namespace ClassDescriber
             {
                 req.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
 
-                var sys = "You are a senior C#/.NET engineer. Explain the selected code in plain English. " +
-                          "Summarize purpose, key inputs/outputs, side effects, exceptions, and any risks. " +
-                          "If code is incomplete, infer intent cautiously. Keep it concise with bullet points.";
+                var sys = "You are a senior C#/.NET engineer mentoring a junior developer. Provide a thorough, " +
+                           "plain-English explanation of the selected class. Start with an overview that explains " +
+                           "the class's responsibilities, how it fits into the bigger picture, and any important " +
+                           "design decisions. Then describe every method in the class one by one. For each method, " +
+                           "explain what it does, why it exists, noteworthy parameters or return values, and walk " +
+                           "through its logic using clear pseudo-code style bullet points. Highlight dependencies, " +
+                           "side effects, error handling, and potential pitfalls. The goal is to let the reader " +
+                           "understand the class without reading the code. Be as detailed and instructive as possible.";
 
                 var user = $"File: {filePath}\nLanguage: {language}\n\n```{language}\n{code}\n```";
 

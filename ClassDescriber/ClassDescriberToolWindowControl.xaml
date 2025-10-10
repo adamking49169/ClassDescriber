@@ -32,11 +32,12 @@
                  AcceptsReturn="True"
                  TextWrapping="Wrap"
                  VerticalScrollBarVisibility="Auto"
-                 HorizontalScrollBarVisibility="Auto"
-                 FontFamily="Consolas"
-                 FontSize="12"
-                 BorderThickness="0"
-                 Background="{x:Null}"/>
+                   HorizontalScrollBarVisibility="Auto"
+                FontFamily="Consolas"
+                FontSize="12"
+                Foreground="#22863A"
+                BorderThickness="0"
+                Background="{x:Null}"/>
             </ScrollViewer>
         </Border>
 
